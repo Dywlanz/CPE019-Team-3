@@ -16,7 +16,7 @@ whisper_model = load_whisper_model()
 def load_sentiment_model():
     tokenizer = ElectraTokenizer.from_pretrained('google/electra-small-discriminator')
     model = ElectraForSequenceClassification.from_pretrained('google/electra-small-discriminator', num_labels=3)
-    model.load_state_dict(torch.load("fine_tuned_model_14.pth", map_location=torch.device("cpu")))
+    model.load_state_dict(torch.load("ELECTRA-Small.pth", map_location=torch.device("cpu")))
     model.eval()
     return tokenizer, model
 
